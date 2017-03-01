@@ -9,29 +9,25 @@
 // console. The School.java application will continue to accept user
 // inputs until the user selects the exit option.
 
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-
+import java.nio.file.*;
+import java.io.*;
 public class School{
-  public static void main(String[] args) {
-    School students = new School();
-    StudentFileReader.readFile();
-
-  }
-  public static class StudentFileReader{
-    public static void readFile(){
-    try {
-      File studentList = new File("./student.txt");
-
-      Scanner studentScanner = new Scanner(studentList);
-      String line = studentScanner.nextLine();
-      System.out.println(line);
-
-    } catch (FileNotFoundException e) {
-     e.printStackTrace();
+  public static void main(String[] args)
+  {
+    Path file = Paths.get("./student.txt");
+    InputStream input = null;
+    try
+    {
+      input = Files.newInputStream(file);
+      BufferedReader reader = new
+        BufferedReader(new InputStreamReader(input));
+      String s = null;
+      s = reader.readLine();
+      System.out.println(s);
+      input.close();
+    }catch (IOException e)
+    {
+      System.out.println(e);
     }
-  }
   }
 }

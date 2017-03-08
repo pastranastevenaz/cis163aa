@@ -1,3 +1,14 @@
+/**
+* <h1>CoffeeShop/h1>
+* <p>This Java File is a program which prompts the end user whether they'd like to order a coffee, espresso, or tea. It then continues to ask the end user for add on options
+* while tracking the price, and displaying the price once all orders are placed.</p>
+* <br>
+* STE2253402
+* CIS163AA - Java Programming: Level I - Class # 29647
+* @author  Steven Pastrana
+* @version 1.0
+* @since   2017-03-08
+*/
 import java.util.Scanner;
 
 public class CoffeeShop{

@@ -1,0 +1,15 @@
+Jane Heller Marketing 43.00 01001
+Harry Jameson Marketing 40.00 01002
+Eric Einhoff Engineering 52.00 01003
+Sally Trudeu Engineering 49.00 01004
+Shanice James Engineering 51.00 01005
+Holly GoLightly Quality_Assurance 35.00 01006
+Diego Barcelona Quality_Assurance 29.00 01007
+Sun Pak Quality_Assurance 29.00 01008
+Pat Christianson Maintenance 18.00 01009
+Oliver Bradley Maintenance 15.00 01010
+Shayna Lewis Maintenance 15.00 01011
+Jaquelyn Smith Security 15.00 01012
+James Okeefe Security 15.00 01013
+Hal Emerich Product_Development 45.00 01014
+Devon Sanchez Product_Development 49.00 01015

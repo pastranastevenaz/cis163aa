@@ -14,19 +14,23 @@ import java.util.*;
 public class Sentence{
   StringBuilder mySb = new StringBuilder();
   Scanner input = new Scanner(System.in);
-  String subject;
-  String adverb;
-  String verb;
+  String space = " ";
 
   public void initPrompt(){
+    StringBuilder newSentence = new StringBuilder();
     System.out.println("Greetings. Please enter a Subject.");
-    subject = input.nextLine();
+    StringBuilder subject = new StringBuilder(input.nextLine());
+    newSentence.append(subject);
+    newSentence.append(space);
     System.out.println("Please enter an adverb.");
-    adverb = input.nextLine();
+    StringBuilder adverb = new StringBuilder(input.nextLine());
+    newSentence.append(adverb);
+    newSentence.append(space);
     System.out.println("Please enter a verb.");
-    verb = input.nextLine();
-
-    System.out.println(subject+adverb+verb);
+    StringBuilder verb = new StringBuilder(input.nextLine());
+    newSentence.append(verb);
+    newSentence.append(space);
+    System.out.println(newSentence);
   }
 
   public static void main(String[] args) {

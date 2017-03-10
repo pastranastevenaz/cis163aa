@@ -3,14 +3,18 @@ import java.io.*;
 import java.util.*;
 
 public class EmployeeScheduler{
+
+
   ArrayList<String> employees = new ArrayList<String>();
-  ArrayList<String[]> employeesArraylist = new ArrayList<String[]>();
-  int employeeCount=0;
+  ArrayList<Employee> employeesArraylist = new ArrayList<Employee>();
+  ArrayList<String> detailedLog = new ArrayList<String>();
+  ArrayList<String> log = new ArrayList<String>();
   String employeeHeader = "FIRST NAME | LAST NAME | SKILL | WAGE | ID NUMBER"+'\n'+"=======================================";
+  int employeeCount=0;
   int fortyHours = 40;
+  Scanner input = new Scanner(System.in);
   //initialize array of Employees
   public void init(){
-    System.out.println("called init");
     Path file = Paths.get("./employees.txt");
     InputStream input = null;
     try{
@@ -36,11 +40,10 @@ public class EmployeeScheduler{
       employeeCount++;
       System.out.println(employeeCount+": "+i);
     }
-    System.out.println("=======================================");
+    System.out.println("======================================="+"\n ---- Let's begin our scheduling.");
   }
-  // This method will iterate through the arraylist of employees and ask how many hours to schedule the emplyee each day.
+
   public void createObjects(){
-    // System.out.println("called scheduler");
     for(String i:employees){
       int counter = 0;
       String[] words = i.split(" ");
@@ -51,14 +54,116 @@ public class EmployeeScheduler{
       Integer id = Integer.parseInt(words[4]);
 
       Employee newEmployee = new Employee(fn, ln, sk, wg, id);
-      employeesArraylist.add(new String[counter]);
-      counter++;
+      employeesArraylist.add(newEmployee);
+      // System.out.println(employeesArraylist.get(counter));
+      counter = counter + 1;
     }
   }
-  public void promptForEach(){
-    System.out.println();
-  }
 
+  public void promptForEach(){
+    double mondayHours;
+    double tuesdayHours;
+    double wednesdayHours;
+    double thursdayHours;
+    double fridayHours;
+    String question = "How many hour would you like to schedule ";
+    // employeesArraylistSize =
+    for(int i = 0; i < employeesArraylist.size(); i++){
+      String tempOutput;
+      double hoursLeftToSchedule = 40.00;
+      double hoursScheduled = 0;
+      double overtimeHours;
+      Employee tempEmp = employeesArraylist.get(i);
+      String tempName = tempEmp.getFirstName() + " " + tempEmp.getLastName();
+
+      //Monday Hours
+      System.out.println(question + tempName + " on Monday");
+      mondayHours = input.nextDouble();
+      hoursLeftToSchedule = hoursLeftToSchedule - mondayHours;
+      hoursScheduled = hoursScheduled + mondayHours;
+      tempOutput = tempName+ " is scheduled for "+ mondayHours+ " hours on Monday.";
+      System.out.println(tempName+ " has "+hoursLeftToSchedule+ " hours left to schedule\n");
+      System.out.println(tempOutput);
+      detailedLog.add(tempOutput);
+
+      // Tuesday
+      System.out.println(question + tempName + " on Tuesday");
+      tuesdayHours = input.nextDouble();
+      hoursLeftToSchedule = hoursLeftToSchedule - tuesdayHours;
+      hoursScheduled = hoursScheduled + tuesdayHours;
+      tempOutput = tempName+ " is scheduled for "+ tuesdayHours+ " hours on Tuesday.";
+      System.out.println(tempName+ " has "+hoursLeftToSchedule+ " hours left to schedule\n");
+      System.out.println(tempOutput);
+      detailedLog.add(tempOutput);
+
+      //Wednesday
+      System.out.println(question + tempName + " on Wednesday");
+      wednesdayHours = input.nextDouble();
+      hoursLeftToSchedule = hoursLeftToSchedule - wednesdayHours;
+      hoursScheduled = hoursScheduled + wednesdayHours;
+      tempOutput = tempName+ " is scheduled for "+ wednesdayHours+ " hours on Wednesday.";
+      System.out.println(tempName+ " has "+hoursLeftToSchedule+ " hours left to schedule\n");
+      System.out.println(tempOutput);
+      detailedLog.add(tempOutput);
+
+      // Thursday
+      System.out.println(question + tempName + " on Thursday");
+      thursdayHours = input.nextDouble();
+      hoursLeftToSchedule = hoursLeftToSchedule - thursdayHours;
+      hoursScheduled = hoursScheduled + thursdayHours;
+      tempOutput = tempName+ " is scheduled for "+ thursdayHours+ " hours on Thursday";
+      System.out.println(tempName+ " has "+hoursLeftToSchedule+ " hours left to schedule\n");
+      System.out.println(tempOutput);
+      detailedLog.add(tempOutput);
+
+      // Friday
+      System.out.println(question + tempName + " on Friday");
+      fridayHours = input.nextDouble();
+      hoursLeftToSchedule = hoursLeftToSchedule - fridayHours;
+      hoursScheduled = hoursScheduled + fridayHours;
+      tempOutput = tempName+ " is scheduled for "+ fridayHours+ " hours on Friday.";
+      System.out.println(tempName+ " has "+hoursLeftToSchedule+ " hours left to schedule\n");
+      System.out.println(tempOutput);
+      detailedLog.add(tempOutput);
+
+      overtimeHours = hoursScheduled - 40;
+
+      if(hoursScheduled > 40){
+        String finTempOutput = tempName+ " is scheduled for a total of " + hoursScheduled + " hours, including "+ overtimeHours+ " hours of overtime.";
+        System.out.println(finTempOutput);
+        log.add(finTempOutput);
+      }else{
+        String finTempOutput = tempName+ " is scheduled for a total of " + hoursScheduled + " hours";
+        System.out.println(finTempOutput);
+        log.add(finTempOutput);
+      }
+      }
+    }
+
+    public void finalPrompt(){
+      System.out.println("\nWould you like to view the detailed or general scheduling log?\nPress 1 for detailed log\nPress 2 for general log\nPress 3 to exit program");
+      char logChoice = input.next().charAt(0);
+      if(logChoice == '1'){
+        for(String i:detailedLog){
+          System.out.println(i);
+        }
+        finalPrompt();
+      }else if(logChoice == '2'){
+        for(String h:log){
+          System.out.println(h);
+        }
+        finalPrompt();
+      }else if(logChoice == '3'){
+        exitProgram();
+      }else{
+        System.out.println("ERROR: Please select a proper option");
+        finalPrompt();
+      }
+    }
+
+    public void exitProgram(){
+      System.out.print("Goodbye");
+    }
 
   public static void main(String[] args) {
     EmployeeScheduler employeeSchedule = new EmployeeScheduler();
@@ -66,9 +171,6 @@ public class EmployeeScheduler{
     employeeSchedule.displayAll();
     employeeSchedule.createObjects();
     employeeSchedule.promptForEach();
-    for(String n:employeeSchedule.employees){
-      System.out.println("Hello");
-      // Promptfor Each employee about eery day of the week.
-    }
+    employeeSchedule.finalPrompt();
   }
 }

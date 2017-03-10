@@ -1,0 +1,15 @@
+001 Jane Heller 4.0
+002 Harry Jameson 3.5
+003 Eric Einhoff 2.7
+004 Sally Trudeu 3.9
+005 Shanice James 2.5
+006 Holly GoLightly 3.0
+007 Diego Barcelona 3.5
+008 Sun Pak Quality 3.0
+009 Pat Christianson 2.5
+010 Oliver Bradley 4.0
+011 Shayna Lewis 3.8
+012 Jaquelyn Smith 3.2
+013 James Okeefe 2.8
+014 Hal Emerich 4.0
+015 Devon Sanchez 4.0

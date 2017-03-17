@@ -1,3 +1,13 @@
+/**
+* <h1>Student/h1>
+* <p>This is the class template for the student. It contains the variables and mutators of the class. </p>
+* <br>
+* STE2253402
+* CIS163AA - Java Programming: Level I - Class # 29647
+* @author  Steven Pastrana
+* @version 1.0
+* @since   2017-03-16
+*/
 public class Student{
   private int studentID;
   private String firstName;

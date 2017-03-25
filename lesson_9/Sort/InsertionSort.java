@@ -1,5 +1,5 @@
 /**
-* <h1>InsertionSort/h1>
+* <h1>InsertionSort</h1>
 * <p>The InsertionSort class has one public method that accepts an integer array. It uses
 * the insertion sort method to sort the passed in array in ascending order.</p>
 * <br>

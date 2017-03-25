@@ -1,5 +1,5 @@
 /**
-* <h1>BubbleSort/h1>
+* <h1>BubbleSort</h1>
 * <p>The BubbleSort class has one public method that accepts an integer array. It uses
 * the bubble sort method to sort the passed in array in ascending order.</p>
 * <br>

@@ -1,0 +1,4 @@
+boca_raton 250000 contemporary
+yonkers 632500 colonial
+yuma 120600 mediterranean
+san_diego 495000 townhouse

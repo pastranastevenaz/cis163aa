@@ -1,0 +1,15 @@
+heller_jane 1001 4.0
+jammeson_harry 1002 3.5
+einhoff_eric 1003 2.7
+trudeu_sally 1004 3.9
+james_shanice 1005 2.5
+golightly_holly 1006 3.0
+barcelona_diego 1007 3.5
+pak_sun 1008 3.0
+christianson_pat 1009 2.5
+bradley_oliver 1010 3.9
+lewis_shayna 1011 3.8
+smith_jaquellyn 1012 3.2
+okeefe_james 1013 2.8
+emerich_hal 1014 4.0
+sanche_devon 1015 4.0

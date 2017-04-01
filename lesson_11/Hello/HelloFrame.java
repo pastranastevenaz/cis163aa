@@ -21,8 +21,7 @@ public class HelloFrame extends JFrame implements ActionListener{
   JTextField lastNameInput = new JTextField(20);
   JButton pressMe = new JButton("Press me");
   JLabel greeting = new JLabel("");
-  public HelloFrame()
-  {
+  public HelloFrame(){
     super("Hello");
     setSize(300,250);
     setLayout(new FlowLayout());
@@ -40,8 +39,7 @@ public class HelloFrame extends JFrame implements ActionListener{
     pressMe.addActionListener(this);
   }
   @Override
-  public void actionPerformed(ActionEvent e)
-  {
+  public void actionPerformed(ActionEvent e){
     String firstName = firstNameInput.getText();
     String lastName = lastNameInput.getText();
     String greet = "Hello, " + firstName+" "+lastName;
